@@ -1,6 +1,7 @@
 using DotNetEnv;
 using TransferMarket.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 Env.Load();
@@ -26,6 +27,16 @@ builder.Services.AddCors(options =>
         });
 });
 
+// Configuracion de la autenticacion
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+   .AddCookie(options =>
+    {
+        options.LoginPath = "/Access/Login";
+        options.ExpireTimeSpan= TimeSpan.FromMinutes(30); //Tiempo de duracion de la sesion del usuario
+    });
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -43,6 +54,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication(); //Indica que debe de usar la Autenticacion que ya configuramos
 
 app.UseAuthorization();
 

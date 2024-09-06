@@ -24,6 +24,11 @@ namespace TransferMarket.Models
         [MaxLength(50, ErrorMessage = "Este campo tiene que tener Maximo 90 caracteres")]
         public string Usuario { get; set; }
 
+        [Column("email")]
+        [MinLength(5, ErrorMessage = "Este campo tiene que tener minimo 5 caracteres")]
+        [MaxLength(50, ErrorMessage = "Este campo tiene que tener Maximo 90 caracteres")]
+        public string Email { get; set; }
+
         [Column("contraseña")]
         [MinLength(5, ErrorMessage = "Este campo tiene que tener minimo 5 caracteres")]
         [MaxLength(255, ErrorMessage = "Este campo tiene que tener Maximo 255 caracteres")]
