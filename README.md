@@ -71,7 +71,7 @@ Este proyecto es una aplicación web desarrollada con C# y .NET que incluye:
 ## Enlaces
 
 - [GitHub](https://github.com/AlejandroLondonoValle)
-- [LinkedIn](www.linkedin.com/in/luís-alejandro-londoño-valle)
+- [LinkedIn](https://www.linkedin.com/in/lu%C3%ADs-alejandro-londo%C3%B1o-valle/)
 - [Instagram](https://www.instagram.com/alejandro_londono206/)
 
 ## Contribuciones
