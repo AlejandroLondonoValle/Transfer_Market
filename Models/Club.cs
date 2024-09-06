@@ -3,39 +3,37 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TransferMarket.Models
 {
-    [Table("jugadores")]
-    public class Jugador
+    [Table("clubes")]
+    public class Club
     {
         [Key]
         [Column("id")]
         public int Id { get; set; }
 
-        [Column("nacionalidad")]
+        [Column("ciudad")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
-        [Display(Name = "Nacionalidad")]
-        public required string Nacionalidad { get; set; }
+        [Display(Name = "Ciudad")]
+        public required string Ciudad { get; set; }
 
-        [Column("nombre_completo")]
+        [Column("nombre")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
-        [Display(Name = "Nombre Completo")]
-        public required string NombreCompleto { get; set; }
+        [Display(Name = "Nombre")]
+        public required string Nombre { get; set; }
 
-        [Column("posicion")]
+        [Column("estadio")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
-        [Display(Name = "Posicion")]
-        public required string Posicion { get; set; }
+        [Display(Name = "Estadio")]
+        public required string Estadio { get; set; }
 
-        [Column("valor")]
-        [Required(ErrorMessage = "El campo valor es requerido.")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "El campo valor tiene que ser positivo y mayor que 0.")]
-        [DataType(DataType.Currency, ErrorMessage = "Formato de valor invalido")]
-        public double Valor { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Jugador> Jugadores { get; set; }
     }
 }
