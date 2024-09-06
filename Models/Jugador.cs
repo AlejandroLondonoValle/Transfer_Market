@@ -14,23 +14,29 @@ namespace TransferMarket.Models
         [Column("id")]
         public int Id { get; set; }
 
+        [Column("imagen_url")]
+        [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
+        [Display(Name = "imagen")]
+        public string Imagen { get; set; }
+
         [Column("nacionalidad")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Nacionalidad")]
-        public required string Nacionalidad { get; set; }
+        public  string Nacionalidad { get; set; }
 
         [Column("nombre_completo")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Nombre Completo")]
-        public required string NombreCompleto { get; set; }
+        public  string NombreCompleto { get; set; }
 
         [Column("posicion")]
         [StringLength(50, ErrorMessage = "El maximo de caracteres en este campo es de 50")]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Posicion")]
-        public required string Posicion { get; set; }
+        public  string Posicion { get; set; }
 
         [Column("valor")]
         [Required(ErrorMessage = "El campo valor es requerido.")]

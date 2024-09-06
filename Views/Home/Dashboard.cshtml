@@ -9,14 +9,46 @@
         <h1>Bienvenido,
             @User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault()
         </h1>
-        <br/>
-        <hr/>
+        <br />
+        <hr />
         <h3>
             @User.Claims.Where(c => c.Type == ClaimTypes.Email).Select(c => c.Value).SingleOrDefault()
         </h3>
     }
 
-
+    <br>
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>En esta seccion podras Crear, eliminar y actualizar a todos los jugadores de la base de datos</p>
+    <hr>
+    <br>
+
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+        <div>
+            <div class="card" style="width: 20rem; height: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Crear Jugador</h5>
+                    <p class="card-text">En este apartado podras crear jugadores</p>
+                    <button type="button" class="btn btn-outline-success">Crear</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 20rem; height: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Eliminar Jugador</h5>
+                    <p class="card-text">En este apartado podras eliminar jugadores</p>
+                    <a asp-controller="Jugador" asp-action="ListaAdministradorEliminar" type="button" class="btn btn-outline-danger">Eliminar</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="width: 20rem; height: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Actualizar Jugador</h5>
+                    <p class="card-text">En este apartado podras editar jugadores</p>
+                    <button type="button" class="btn btn-outline-warning">Editar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
