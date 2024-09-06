@@ -41,6 +41,7 @@ namespace TransferMarket.Controllers
             Administrador administrador = new Administrador()
             {
                 Nombre = modelo.Nombre,
+                Usuario = modelo.Usuario,
                 Email = modelo.Email,
                 Contraseña = modelo.Contraseña
             };
@@ -68,7 +69,7 @@ namespace TransferMarket.Controllers
         {
             Administrador administrador_found = await _context.Administradores
                                 .Where(a =>
-                                 a.Email == modelo.Email &&
+                                 a.Email == modelo.Email || a.Usuario == modelo.User &&
                                  a.Contraseña == modelo.Password).FirstOrDefaultAsync();
 
             if (administrador_found == null)
