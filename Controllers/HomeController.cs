@@ -34,7 +34,7 @@ public class HomeController : Controller
     public async Task<IActionResult> Exit()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login","Access");
+        return RedirectToAction("Login","Acceso");
     }
 
 }

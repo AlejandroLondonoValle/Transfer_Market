@@ -50,7 +50,7 @@ namespace TransferMarket.Controllers
 
             if (administrador.Id != 0)
             {
-                return RedirectToAction("Login", "Access");
+                return RedirectToAction("Login", "Acceso");
             }
             ViewData["Mensaje"] = "Error Fatal, No se pudo crear el Usuario Administrador";
             return View();
