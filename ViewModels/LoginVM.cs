@@ -7,8 +7,7 @@ namespace TransferMarket.ViewModels
 {
     public class LoginVM
     {
-        public string Email { get; set; }
-        public string User { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
     }
 }
