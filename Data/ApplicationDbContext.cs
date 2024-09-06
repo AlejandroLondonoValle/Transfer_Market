@@ -17,5 +17,7 @@ public class ApplicationDbContext : DbContext
 
 
     public DbSet<Jugador> Jugadores { get; set; }
+    public DbSet<Club> Clubes { get; set; }
+    public DbSet<Administrador> Administradores { get; set; }
 }
 
